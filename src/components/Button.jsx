@@ -2,4 +2,28 @@ import React from "react";
 import './Butoon.css'
 
 export default props =>
-    <button className="button">{props.label}</button>
+    <button 
+        onClick={e => props.click && props.click(props.label)}
+        className={`button
+       ${props.operation ? 'operation' : ''}
+       ${props.double ? 'double' : ''}
+       ${props.triple ? 'triple' : ''}
+    
+    `}>
+        {props.label}
+    </button>
+
+
+// //another option:
+// export default props => {
+//     let classtype = 'button';
+//     classtype += props.operation ? 'operation' : '';
+//     classtype += props.double ? 'double' : '';
+//     classtype += props.triple ? 'triple' : '';
+
+//     return (
+//         <button className={classtype}>
+//             {props.label}
+//         </button>
+//     )
+// }
