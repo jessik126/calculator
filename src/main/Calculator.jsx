@@ -4,7 +4,17 @@ import './Calculator.css'
 import Button from "../components/Button";
 import Display from "../components/Display";
 
+const initialState = {
+    displayValue: '0',
+    clearDisplay: false,
+    operation: null,
+    value: [0,0],
+    index: 0
+}
+
 export default class Calculator extends Component {
+
+    state = { ...initialState } //state is a clone of initialState
 
     // // to not have problems with 'this', instead:
     // //const addDigit = n => this.addDigit(n)
@@ -20,26 +30,44 @@ export default class Calculator extends Component {
     
     clearMemory(){
         console.log('limpar')
+        this.setState({...initialState})
     }
 
     setOperation(operation){
         console.log(operation)
+        
     }
 
     addDigit(digit){
         console.log(digit)
+
+        if (digit === '.' && this.state.displayValue.includes('.'))
+            return
+
+        const clearDisplay = this.state.displayValue === '0'
+            || this.state.clearDisplay
+        const currentValue = clearDisplay ? '' : this.state.displayValue
+        const displayValue = currentValue + digit
+        this.setState({displayValue, clearDisplay: false})
+
+        if (digit != '.'){
+            const i = this.state.index
+            const newValue = parseFloat(displayValue)
+            const values = [...this.state.value]
+            values[i] = newValue
+            this.setState({values}) //or if the variable has a different name, use key:value :: this.setState({values : newValues})
+            console.log(values)
+        }
     }
 
 
-    render(){
-        
+    render(){   
         const addDigit = n => this.addDigit(n)
         const setOperation = n => this.setOperation(n)
 
-
         return (
             <div className="calculator">
-                <Display value={100000000}/>
+                <Display value={this.state.displayValue}/>
                 <Button label="AC" click={() => this.clearMemory()} triple/>
                 <Button label="/" click={setOperation} operation/>
                 <Button label="7" click={addDigit}/>
