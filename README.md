@@ -1,4 +1,44 @@
-# Getting Started with Create React App
+# Calculator using React
+
+This project has the objective to recreate the Mac Calculator using React
+
+Model:
+<img src="calculator-model.png" width="140">
+
+Final:
+<img src="calculator-final.png" width="150">
+
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Functionalities
+As a basic calculator, you can add, subtract, multiply and divide to integer and decimal values. You can erase the display and ask the final value of the operation with AC and =, respectively.
+
+# Technologies
+React, Html, CSS
+
+# Learnings
+- variables in CSS <!--//:root Button.css -->
+- dynamic class name in HTML
+- flex-box in CSS
+- use imported letter font <!-- //@font-face index.css -->
+- grid in CSS
+- use the same components in different situation and with different functionalities
+- component state
+
+
+# To execute
+Run `npm start`
+
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +107,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
